@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>K V l T G o L D</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+<div>
+		<header>
+	<ul>
+  		<li><a href="/index.html">Home</a></li>
+  		<li><a href="/projects.html">Projects</a></li>
+  		<li><a href="/blog.html">Blog</a></li>
+  		<li><a href="/contact.html">Contact</a></li>
+  		<li><a class="active" href="/about.html">About</a></li>
+	</ul>
+</div>
+		<div class="logo">
+			<img src="img/kvltlogo.jpg" alt="kvltgold logo"
+				width="90" height="90" alt="kvltlogo" />
+		</div>
+
+		<div class="twitter">
+			<a href="https://twitter.com/_shugyosha" class="twitter-follow-button" data-show-count="true">Follow@_shugyosha</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+
+		</header>
+ 
+		<main>
+<!--<div class="tab-panels">
+		<ul class="tabs">
+			<li class="active">panel1</li>
+			<li>music</li>
+			<li>writing</li>
+			<li>coding</li>
+			<li>art</li>
+		</ul>
+		<div id="panel1" class="panel active">
+			<div class="music">
+			<iframe style="border: 0; width: 400px; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=3627288732/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="http://kvltmusik.bandcamp.com/album/via-negativa-ep">Via Negativa EP by via negativa</a></iframe>
+			</div>
+		</div>
+	</div> -->
+			<div class="tab-panels">
+            <ul class="tabs">
+                <li rel="art">art</li>
+                <li rel="music" class="active">music</li>
+                <li rel="code">code</li>
+            </ul>
+            <div id="art" class="panel">
+                <img src="img/kvltlogo.jpg" alt="kvltgold logo"
+				width="200" height="200" alt="kvltlogo"/><br/>
+            </div>
+            <div id="music" class="panel active">
+                <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3627288732/size=large/bgcol=333333/linkcol=e32c14/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://kvltmusik.bandcamp.com/album/via-negativa-ep">Via Negativa EP</a></iframe>
+            </div>
+            <div id="code" class="panel">
+                <a href="https://github.com/red-leaf1" target="_blank">Github</a>
+            </div>
+        </div>
+		<div>
+		</main>
+
+	</body>
+
+<script src="scripts/jquery-3.2.1.js"></script>
+
+<script>
+		
+$(function() {
+
+	$('.tab-panels .tabs li').on('click', function() {
+
+		var panel = $(this).closest('.tab-panels');
+
+		panel.find('.tabs li.active').removeClass('active');
+		$(this).addClass('active');
+
+		//figure out which panel to show
+		var panelToShow = $(this).attr('rel');
+		
+		//hide current panel	
+		panel.find('.panel.active').slideUp(300, showNextPanel);
+
+		//show next panel
+		function showNextPanel() {
+			$(this).removeClass('active');
+
+			$('#'+panelToShow).slideDown(300, function () {
+				$(this).addClass('active');
+			});
+		}
+
+	});
+
+});
+
+
+</script>
+<!--Design, javascript & layout by kvltgold/Tatenda M.-->
+</html>
